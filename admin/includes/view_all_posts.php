@@ -15,7 +15,7 @@
     <tbody>
     <?php
 
-        $query = "SELECT * FROM posts";
+        $query = "SELECT * FROM posts ";
         $insert_post_query = mysqli_query($conn, $query);
 
         while($row = mysqli_fetch_assoc($insert_post_query)){
@@ -39,7 +39,8 @@
                 echo "<td>$post_tags</td>";
                 echo "<td> $post_comment_count</td>";
                 echo "<td>$post_date</td>";
-                echo "<td><a href='post.php?delete=$post_id' >Delete</a>";
+                echo "<td><a href='post.php?source=edit_post&p_id={$post_id}' >Edit</a>";
+                echo "<td><a href='post.php?delete={$post_id}' >Delete</a>";
             echo "</tr>";
                 
         }
