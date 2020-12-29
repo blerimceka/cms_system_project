@@ -31,11 +31,13 @@
                     $select_all_categories_query = mysqli_query($conn, $query);
 
                     while($row = mysqli_fetch_assoc($select_all_categories_query)){
+                        $cat_id = $row['cat_id'];
                         $cat_title = $row['cat_title'];
+                        
 
                     ?>
                         <ul class="list-unstyled">
-                            <li><a href="#"><?php echo $cat_title; ?></a></li>
+                            <li><a href="category.php?category=<?php echo $cat_id; ?>"><?php echo $cat_title; ?></a></li>
                         </ul>
                     
                     <?php
